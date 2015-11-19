@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load bootstrap3 %}
+
+{% block jumbotron %}
+
+<form action="{% url 'rsvp' %}" method="post" class="form">
+  {% csrf_token %}
+  {% bootstrap_form_errors form type='non_fields' %}
+  {% bootstrap_form form %}
+  {% buttons %}
+    <button type="submit" class="btn btn-primary">RSVP</button>
+  {% endbuttons %}
+</form>
+
+{% endblock %}

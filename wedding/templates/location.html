@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block jumbotron %}
+<iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=894%20Rock%20Castle%20Gorge%20Road%20Floyd%2C%20VA%2024091&zoom=10&key={{ google_maps_api_key }}" allowfullscreen></iframe>
+{% endblock %}
+
+{% block body %}
+  <div class="row">
+    <div class="col-md-4">
+      <h2>Address</h2>
+      <p>894 Rock Castle Gorge Road<br />Floyd, VA 24091</p>
+    </div>
+    <div class="col-md-4">
+      <h2>Heading</h2>
+      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+      <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+   </div>
+    <div class="col-md-4">
+      <h2>Heading</h2>
+      <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+      <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+    </div>
+  </div>
+{% endblock %}

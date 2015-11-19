@@ -1,0 +1,9 @@
+div#wrapper{
+	width: 100%;
+	margin: 10px;
+	text-align: center;
+}
+
+.jumbotron img.hero {
+	width: 100%;
+}
