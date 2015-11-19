@@ -4,7 +4,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import TemplateView
 
-from views import LocationView, rsvp_view
+from wedding.views import LocationView, rsvp_view
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
