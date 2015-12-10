@@ -14,6 +14,7 @@
     <title>{% block title %}Ben &amp; Meghan{% endblock %}</title>
 
     {% bootstrap_css %}
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"></link>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -31,29 +32,26 @@
         <nav>
           <ul class="nav nav-pills pull-right">
             {% url 'home' as home_url %}
-            <li role="presentation" {% if request.get_full_path == home_url %}class="active"{% endif %}><a href="{% url 'home' %}">Home</a></li>
+            <li role="presentation" {% if request.get_full_path == home_url %}class="active"{% endif %}><a href="{% url 'home' %}">Ben &amp; Meghan</a></li>
             {% url 'rsvp' as rsvp_url %}
             <li role="presentation" {% if request.get_full_path == rsvp_url %}class="active"{% endif %}><a href="{% url 'rsvp' %}">RSVP</a></li>
             {% url 'event_info' as event_info_url %}
             <li role="presentation" {% if request.get_full_path == event_info_url %}class="active"{% endif %}><a href="{% url 'event_info' %}">Event Info</a></li>
-            {% url 'location' as location_url %}
-            <li role="presentation" {% if request.get_full_path == location_url %}class="active"{% endif %}><a href="{% url 'location' %}">Location</a></li>
+            {% url 'wedding_party' as event_info_url %}
+            <li role="presentation" {% if request.get_full_path == event_info_url %}class="active"{% endif %}><a href="{% url 'wedding_party' %}">Wedding Party</a></li>
             {% url 'accommodations' as accommodations_url %}
             <li role="presentation" {% if request.get_full_path == accommodations_url %}class="active"{% endif %}><a href="{% url 'accommodations' %}">Accommodations</a></li>
             {% url 'registry' as registry_url %}
             <li role="presentation" {% if request.get_full_path == registry_url %}class="active"{% endif %}><a href="{% url 'registry' %}">Registry</a></li>
           </ul>
         </nav>
-        <h3 class="text-muted">Ben &amp; Meghan</h3>
       </div>
 
+      {% block body %}
       <div class="jumbotron">
-        {% block jumbotron %}
-        <img src="{% static 'img/fflove.jpg' %}" class="hero" />
-        {% endblock %}
+        {% block jumbotron %}{% endblock %}
       </div>
-
-      {% block body %}{% endblock %}
+      {% endblock %}
 
     </div> <!-- /container -->
 

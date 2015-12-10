@@ -4,6 +4,8 @@
 
 {% block jumbotron %}
 
+<div class="row">
+
 <form action="{% url 'rsvp' %}" method="post" class="form">
   {% csrf_token %}
   {% bootstrap_form_errors form type='non_fields' %}
@@ -12,5 +14,7 @@
     <button type="submit" class="btn btn-primary">RSVP</button>
   {% endbuttons %}
 </form>
+
+</div>
 
 {% endblock %}
