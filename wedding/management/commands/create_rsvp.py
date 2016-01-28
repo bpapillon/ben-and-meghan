@@ -25,7 +25,6 @@ class Command(BaseCommand):
                 defaults[attr] = options[attr]
         obj, created = Rsvp.objects.update_or_create(email=options['email'], defaults=defaults)
         if created:
-            print 'created new record'
+            print 'created new record %s with rsvp code %s' % (obj.email, obj.rsvp_code)
         else:
-            print 'updated existing record'
-        print obj
+            print 'updated existing record %s with rsvp code %s' % (obj.email, obj.rsvp_code)
