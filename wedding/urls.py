@@ -4,14 +4,10 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import TemplateView
 
-from wedding.views import rsvp_view
+from wedding.views import home_view, rsvp_view
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^accommodations/', TemplateView.as_view(template_name="accommodations.html"), name="accommodations"),
-    url(r'^event_info/', TemplateView.as_view(template_name="event_info.html"), name="event_info"),
-    url(r'^rsvp/', rsvp_view, name="rsvp"),
-    url(r'^registry/', TemplateView.as_view(template_name="registry.html"), name="registry"),
-    url(r'^wedding-party/', TemplateView.as_view(template_name="wedding_party.html"), name="wedding_party"),
-    url(r'^', TemplateView.as_view(template_name="home.html"), name="home"),
+    url(r'^rsvp/(?P<rsvp_code>[a-z\-]+)/?$', rsvp_view, name="rsvp"),
+    url(r'^', home_view, name="home"),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -5,6 +5,7 @@ body {
   -o-background-size: cover;
   background-size: cover;
   font-family: "Josefin Sans", Georgia, Serif;
+  font-size: 10pt;
 }
 
 div#wrapper{
@@ -13,17 +14,27 @@ div#wrapper{
 	text-align: center;
 }
 
-.jumbotron img.hero {
+.main img.hero {
 	width: 100%;
 }
 
-div.jumbotron {
+div.main {
 	background-color:rgba(238,238,238,0.8);
 	margin-top: 10px;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 ul {
-    list-style-type: none;
-    margin: 15px;
-    padding: 0;
+  list-style-type: none;
+  margin: 15px;
+  padding: 0;
+}
+
+div.wedding-party div.col-xs-4 img:hover, div.wedding-party div.col-xs-4 {
+  text-align: center;
+}
+
+div.wedding-party div.col-xs-4 img:hover, div.wedding-party div.col-xs-4 h3:hover {
+  cursor: pointer;
 }

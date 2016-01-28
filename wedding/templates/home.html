@@ -1,3 +1,16 @@
 {% extends 'base.html' %}
 
-{% block body %}{% endblock %}
+{% load bootstrap3 %}
+
+{% block main %}
+
+<form action="{% url 'home' %}" method="post" class="form">
+  {% csrf_token %}
+  {% bootstrap_form_errors form type='non_fields' %}
+  {% bootstrap_form form %}
+  {% buttons %}
+    <button type="submit" class="btn btn-primary">Enter if You Dare :)</button>
+  {% endbuttons %}
+</form>
+
+{% endblock %}
