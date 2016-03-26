@@ -73,6 +73,7 @@
 					<div class="col-md-3 col-sm-3">&nbsp;</div>
 					<div class="col-md-6 col-sm-6">
 						<div class="well" ng-show="form_state == 0">
+							<div class="alert alert-danger" role="alert" ng-show="error_text" ng-bind="error_text"></div>
 							<p>Turn over your invitation; there is an RSVP code there.</p>
 							<form class="form-horizontal" role="form" novalidate>
 								{% csrf_token %}
@@ -90,6 +91,7 @@
 							</form>
 						</div>
 						<div class="well" ng-show="form_state == 2">
+							<div class="alert alert-danger" role="alert" ng-show="error_text" ng-bind="error_text"></div>
 							<form class="form-horizontal" role="form" novalidate>
 								{% csrf_token %}
 							    <div class="form-group">

@@ -32,7 +32,7 @@ controller('rsvpFormCtrl', ['$cookies', '$http', '$scope', function($cookies, $h
 
 	$scope.getRsvp = function() {
 		var rsvp_code = $scope.rsvp_code.toLowerCase().replace(/[\s\_]+/g, '-').replace(/[^a-z0-9\-]/g, '');
-		$scope.error_text = '';
+		$scope.setError();
 		$scope.form_state = 1;
 		$http({
 			'method': 'GET',
@@ -41,13 +41,17 @@ controller('rsvpFormCtrl', ['$cookies', '$http', '$scope', function($cookies, $h
 			$scope.rsvp = response.data;
 			$scope.form_state = 2;
 		}, function errorCallback(response) {
-			$scope.error_text = 'Wups....';
+			$scope.setError('Are you sure? We couldn\'t find that RSVP code...');
 			$scope.form_state = 0;
 		});
 	};
 
 	$scope.submitRsvp = function() {
-		$scope.error_text = '';
+		if (!$scope.rsvp.email) {
+			$scope.setError('We\'re gonna need your email address...');
+			return;
+		}
+		$scope.setError();
 		$scope.form_state = 1;
 		$scope.rsvp.responded = true;
 		$http({
@@ -61,9 +65,17 @@ controller('rsvpFormCtrl', ['$cookies', '$http', '$scope', function($cookies, $h
 			$scope.rsvp = response.data;
 			$scope.form_state = 3;
 		}, function errorCallback(response) {
-			$scope.error_text = 'Wups....';
+			$scope.setError('Something\'s not right here...');
 			$scope.form_state = 2;
 		});
+	};
+
+	$scope.setError = function(message) {
+		if (typeof message === 'undefined') {
+			$scope.error_text = '';
+		} else {
+			$scope.error_text = message;
+		}
 	};
 
 }]);
