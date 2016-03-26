@@ -65,13 +65,11 @@ a:hover,a:active,a:focus {
 }
 
 .wedding .well a{
-	/*color: #D32020;*/
-	color: #08b5cb;
+	color: #2D571F;
 	text-decoration:none;
 }
 
 .wedding .well a:hover{
-	/*color:#cb1e08;*/
 	color: #0A92A3;
 }
 
@@ -99,8 +97,7 @@ a:hover,a:active,a:focus {
 }
 
 .navbar-default .navbar-toggle {
-	/*border-color: #D32020;*/
-	border-color: #1391A1;
+	border-color: #2D571F;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
@@ -108,16 +105,15 @@ a:hover,a:active,a:focus {
 }
 
 .navbar-toggle{
-	background:#cb1e08;
+	background: #2D571F;
 }
 
 .navbar-toggle:hover{
-	background: #1391A1 !important;
-	/*background:#b41a06 !important;*/
+	background: #2D571F !important;
 }
 
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
-	border-color: #e9331b;
+	border-color: #2D571F;
 }
 
 .navbar-default .navbar-nav>li>a {
@@ -167,7 +163,6 @@ a:hover,a:active,a:focus {
 }
 
 .main .main-invite{
-	/*background:#fff;*/
 	padding-left:25px;
 	padding-right:25px;
 	margin-bottom:30px;
