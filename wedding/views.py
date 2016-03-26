@@ -1,35 +1,20 @@
-from django.core.urlresolvers import reverse
-from django.http import Http404
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404
 
-from .forms import RsvpCodeForm, RsvpForm
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+
 from .models import Rsvp
+from .serializers import RsvpSerializer
 
 
-def home_view(request):
-    if request.method == 'POST':
-        rsvp_code = request.POST.get('rsvp_code')
-        if rsvp_code is None:
-            raise Http404()
-        try:
-            rsvp = Rsvp.objects.get(rsvp_code=rsvp_code.replace(' ', '-'))
-        except Rsvp.DoesNotExist:
-            raise Http404()
-        return redirect(reverse('rsvp', args=(rsvp.rsvp_code,)))
-    else:
-        form = RsvpCodeForm()
-    return render(request, 'home.html', {'form': form})
-
-
-def rsvp_view(request, rsvp_code):
-    try:
-        obj = Rsvp.objects.get(rsvp_code=rsvp_code)
-    except Rsvp.DoesNotExist:
-        raise Http404()
-    if request.method == 'POST':
-        form = RsvpForm(request.POST, instance=obj)
-        if form.is_valid():
-            obj = form.save()
-    else:
-        form = RsvpForm(instance=obj)
-    return render(request, 'rsvp.html', {'form': form, 'obj': obj})
+@api_view(['GET', 'PUT'])
+def rsvp_view(request, rsvp_code=None):
+    rsvp = get_object_or_404(Rsvp, rsvp_code_slug=rsvp_code)
+    if request.method == 'GET':
+        data = RsvpSerializer(rsvp).data
+        return Response(data)
+    elif request.method == 'PUT':
+        serializer = RsvpSerializer(rsvp, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)

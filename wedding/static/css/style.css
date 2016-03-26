@@ -1,40 +1,461 @@
-body {
-  background: url("/static/img/fflove.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  font-family: "Josefin Sans", Georgia, Serif;
-  font-size: 10pt;
+@font-face{
+    font-family: 'Fabiolo Regular';
+    src: url('/static/fonts/fabiolosmallcap-regular/fabiolosmallcap-regular.woff');
 }
 
-div#wrapper{
-	width: 100%;
-	margin: 10px;
+@font-face{
+    font-family: 'Fabiolo Smallcap Semibold';
+    src: url('/static/fonts/fabiolo-smallcap-semibold/fabiolo-smallcap-semibold.woff');
+}
+
+body{
+	font-family: 'Fabiolo Regular', sans-serif;
+	font-size:13px;
+	line-height:20px;
+	padding-top:48px;
+	background:#ddd url('/static/img/texture.jpg');
+	background-size:cover;
+	-webkit-font-smoothing: antialiased;
+}
+
+h3{
+	text-transform: uppercase;
+}
+
+p{
+	margin:0;
+	padding:0;
+}
+
+a:hover,a:active,a:focus {
+	outline: 0;
+}
+
+:focus {
+	outline:none;
+}
+
+::-moz-focus-inner {
+	border:0;
+}
+
+/* Container */
+
+.container{
+	width:900px;
+}
+
+.bor{
+	background:url('/static/img/trees-separator.png') no-repeat;
+	height:40px;
+	width:350px;
+	margin:15px auto;
+}
+
+.title h3{
+	text-align:center;
+	font-family: 'Fabiolo Regular', serif;
+	font-size:30px;
+	color:444;
+}
+
+.wedding .well a{
+	/*color: #D32020;*/
+	color: #08b5cb;
+	text-decoration:none;
+}
+
+.wedding .well a:hover{
+	/*color:#cb1e08;*/
+	color: #0A92A3;
+}
+
+
+/* Navigation */
+
+.navbar{
+	background:#ddd url('/static/img/texture.jpg');
+	background-size:cover;
+
+}
+
+.navbar .navbar-header .navbar-toggle span.menu{
+	line-height:20px;
+}
+
+.navbar .navbar-header a.navbar-brand{
+	font-family: 'Fabiolo Smallcap Semibold';
+	color:#333;
+	font-size:22px;
+	padding-top:15px;
+	padding-bottom:15px;
+	text-shadow:1px 1px 1px #555;
+	text-transform: uppercase;
+}
+
+.navbar-default .navbar-toggle {
+	/*border-color: #D32020;*/
+	border-color: #1391A1;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #fff;
+}
+
+.navbar-toggle{
+	background:#cb1e08;
+}
+
+.navbar-toggle:hover{
+	background: #1391A1 !important;
+	/*background:#b41a06 !important;*/
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+	border-color: #e9331b;
+}
+
+.navbar-default .navbar-nav>li>a {
+	color: #333;
+	padding-top:15px;
+	padding-bottom:15px;
+	font-weight:bold;
+	text-transform:uppercase;
+	font-size: 20px;
+	font-family: 'Fabiolo Smallcap Semibold';
+	text-shadow:1px 1px 1px #222;
+}
+
+.navbar-default .navbar-nav li {
+	width: 95px;
 	text-align: center;
 }
 
-.main img.hero {
-	width: 100%;
+.navbar-default .navbar-nav>li>a:hover.anchorLinkHome {
+	background: url('/static/img/hover-moon-new.png') no-repeat;
 }
 
-div.main {
-	background-color:rgba(238,238,238,0.8);
-	margin-top: 10px;
-  border-radius: 5px;
-  padding: 10px;
+.navbar-default .navbar-nav>li>a:hover.anchorLinkRsvp {
+	background: url('/static/img/hover-moon-crescent.png') no-repeat;
 }
 
-ul {
-  list-style-type: none;
-  margin: 15px;
-  padding: 0;
+.navbar-default .navbar-nav>li>a:hover.anchorLinkPhotos {
+	background: url('/static/img/hover-moon-half.png') no-repeat;
 }
 
-div.wedding-party div.col-xs-4 img:hover, div.wedding-party div.col-xs-4 {
-  text-align: center;
+.navbar-default .navbar-nav>li>a:hover.anchorLinkWedding {
+	background: url('/static/img/hover-moon-waning.png') no-repeat;
 }
 
-div.wedding-party div.col-xs-4 img:hover, div.wedding-party div.col-xs-4 h3:hover {
-  cursor: pointer;
+.navbar-default .navbar-nav>li>a:hover.anchorLinkRegistry {
+	background: url('/static/img/hover-moon-full.png') no-repeat;
+}
+
+/* Main */
+
+.main{
+	background:#ddd url('/static/img/blue-ridge-mountains2.png') repeat-y;
+	background-size: cover;
+	padding-top:40px;
+	padding-bottom:40px;
+	border-bottom:1px solid #444;
+}
+
+.main .main-invite{
+	/*background:#fff;*/
+	padding-left:25px;
+	padding-right:25px;
+	margin-bottom:30px;
+	padding-top:30px;
+	padding-bottom:30px;
+	margin-top:30px;
+	text-align: center;
+	background:#fff url('/static/img/texture.jpg');
+	background-size:cover;
+
+}
+
+.main .main-invite .signal{
+	line-height:16px;
+	display:inline-block;
+	background:#ed4934;
+	padding:5px;
+	border-radius:25px;
+	color:#fff;
+	text-align:center;
+	font-size:11px;
+	font-weight:bold;
+}
+
+.main .main-invite .signal i{
+	padding-left:5px;
+	
+}
+
+.main .main-invite .signal span{
+	text-transform:uppercase;
+	padding-left:5px;
+	padding-right:5px;
+	
+}
+
+.main .main-invite h1{
+	font-family: 'Fabiolo Regular', sans-serif;
+	color:#222;	
+	padding-top:0px;
+	font-weight:bold;
+	font-size:50px;
+	line-height:60px;
+	text-transform:uppercase;
+}
+
+.main .main-invite p{
+	font-family: 'Fabiolo Regular', serif;
+	font-size:15px;
+	
+	font-style:italic;
+	line-height:30px;
+}
+
+.main .main-date{
+	/*background:#ed4934;*/
+	background:#16B7CC;
+	padding-left:10px;
+	padding-top:50px;
+	padding-bottom:40px;
+	padding-right:10px;
+	text-align:center;
+	line-height:60px;
+	margin-top:30px;
+}
+
+.main .main-date i.icon-heart{
+	font-size:70px;
+	color:#fff;
+	line-height:80px;
+	
+}
+
+.main .main-date .date{
+	font-size:50px;
+	text-align:center;
+	line-height:60px;
+	color:#fff;
+}
+
+.main .main-date .date span.month{
+	font-size:40px;
+	line-height:62px;
+}
+
+.main .main-date .date span.year{
+	font-size:55px;
+	line-height:67px;
+}
+
+/* About */
+
+.about{
+	padding-top:20px;
+	padding-bottom:20px;
+}
+
+.about  p.about-para{
+	font-family: 'Fabiolo Regular', serif;
+	font-style:italic;
+	font-size:17px;
+	line-height:30px;
+	color:#666;
+	width:500px;
+	margin:0px auto;
+}
+
+.about .groom h3{
+	text-align:center;
+	font-family: 'Fabiolo Regular', serif;
+	font-size:40px;
+	color:444;
+	text-transform:uppercase;
+}
+
+.about .groom p{
+	font-family: 'Fabiolo Regular', serif;
+	font-style:italic;
+	font-size:15px;
+	line-height:30px;
+	color:#666;
+}
+
+.about .love{
+	text-align:center;
+	padding-top:30px;
+}
+
+.about .love i{
+	font-size:130px;
+	color:#ed4934;
+}
+
+.about .love h3{
+	font-size:20px;
+	color:#555;
+}
+
+.about .bride h3{
+	text-align:center;
+	font-family: 'Fabiolo Regular', serif;
+	font-size:40px;
+	color:444;
+	text-transform:uppercase;
+}
+
+.about .bride p{
+	font-family: 'Fabiolo Regular', serif;
+	font-style:italic;
+	font-size:15px;
+	line-height:30px;
+	color:#666;
+}
+
+/* Photos */
+
+.flex-direction-nav {
+  line-height:40px;
+}
+   
+/* Wedding */
+
+.wedding .well h3{
+	font-size:17px;
+	font-family: 'Fabiolo Regular', serif;
+}
+
+.wedding .well h5{
+	font-family: 'Fabiolo Regular', serif;
+}
+
+.wedding .well p{
+	font-size:16px;
+	line-height:22px;
+	color:#666;	
+}
+
+.wedding .well img{
+	border:1px solid #ddd;
+	background:#fff;
+	padding:5px;
+	margin-bottom:15px;	
+	margin-top:10px;
+}
+
+/* RSVP */
+
+.rsvp .heart{
+	text-align:center;
+}
+
+.rsvp i{
+	font-size:120px;
+	color:#ed4934;
+}
+
+.rsvp .well{
+	padding:20px;
+}
+
+.rsvp .well p{
+	font-family: 'Fabiolo Regular', serif;
+	font-style:italic;
+	font-size:17px;
+	color:#666;
+	line-height:25px;
+	padding-bottom:20px;
+	text-align:center;
+}
+
+.rsvp .well label{
+	font-weight:normal;
+}
+
+.rsvp .well .btn{
+	text-transform:uppercase;
+	font-weight:bold;
+	font-size:13px;
+}
+
+/* Footer */
+
+.footer{
+	padding-top:20px;
+	padding-bottom:20px;
+}
+
+.footer .copy{
+	text-align:center;
+}
+
+.footer .copy a{
+	text-decoration:none;
+	color:#ed4934;
+}
+
+.footer .copy a:hover{
+	color:#cb1e08;
+}
+
+.totop {
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+	z-index: 104400;
+	background: #fa3031;
+}
+
+.totop a, .totop a:visited, .totop a:hover{
+	display: block;
+	width: 30px;
+	height: 30px;
+	color: #fff;
+	text-align: center;
+	line-height: 30px;
+	text-decoration:none;
+}
+
+/* Responsive CSS */
+
+/* Mobile phones */
+@media (max-width: 480px){
+	.container{
+		width:100%;
+	}	
+	
+	.main .main-invite h1{
+		font-size:40px;
+		line-height:50px;
+	}
+	
+	.main .main-date i.icon-heart{
+		font-size:65px;
+	}
+	
+	.main .main-date .date span.month{
+		font-size:35px;
+		line-height:47px;
+	}
+	
+	.main .main-date .date span.year{
+		font-size:48px;
+		line-height:60px;
+	}
+}
+
+/* Tablets */
+@media (max-width: 767px){
+	.container{
+		width:100%;
+	}
+	
+	.about  p.about-para{
+		width:auto;
+	}
 }

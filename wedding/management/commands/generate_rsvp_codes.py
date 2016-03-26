@@ -1,4 +1,4 @@
-from optparse import make_option
+import optparse
 
 from django.core.management.base import BaseCommand
 
@@ -8,8 +8,14 @@ from wedding.models import Rsvp
 class Command(BaseCommand):
 
     option_list = BaseCommand.option_list + (
-        make_option('--overwrite', '-o', action='store_true', default=False,
-                    dest='overwrite', help='Overwrite existing RSVP codes'),
+        optparse.make_option(
+            '--overwrite',
+            '-o',
+            action='store_true',
+            default=False,
+            dest='overwrite',
+            help='Overwrite existing RSVP codes',
+        ),
     )
 
     def handle(self, *args, **options):

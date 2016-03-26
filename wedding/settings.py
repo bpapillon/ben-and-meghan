@@ -66,7 +66,7 @@ DATABASES = {
         'PORT': os.environ.get('DATABASE_PORT'),
     }
 }
-DATABASES['default'] =  dj_database_url.config()
+DATABASES['default'] = dj_database_url.config()
 
 LANGUAGE_CODE = 'en-us'
 
