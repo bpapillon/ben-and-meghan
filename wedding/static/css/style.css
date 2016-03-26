@@ -27,6 +27,11 @@ p{
 	padding:0;
 }
 
+.btn-danger, .btn-danger:hover {
+	background-color: #2D571F;
+    border-color: #2D571F;
+}
+
 a:hover,a:active,a:focus {
 	outline: 0;
 }
@@ -408,7 +413,7 @@ a:hover,a:active,a:focus {
 	bottom: 0px;
 	right: 0px;
 	z-index: 104400;
-	background: #fa3031;
+	background: #2D571F;
 }
 
 .totop a, .totop a:visited, .totop a:hover{
