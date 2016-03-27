@@ -155,7 +155,7 @@ a:hover,a:active,a:focus {
 /* Main */
 
 .main{
-	background:#ddd url('/static/img/blue-ridge-mountains2.png') repeat-y;
+	background:#ddd url('/static/img/blue-ridge-mountains-min.png') repeat-y;
 	background-size: cover;
 	padding-top:40px;
 	padding-bottom:40px;
