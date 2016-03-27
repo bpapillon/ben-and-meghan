@@ -1,7 +1,8 @@
 from django.db import models
+from django.utils import timezone
 from django.utils.text import slugify
 
-from .utils import generate_rsvp_code
+from .utils.rsvp_code import generate_rsvp_code
 
 
 class Rsvp(models.Model):
@@ -14,6 +15,8 @@ class Rsvp(models.Model):
     rsvp_code_slug = models.CharField(max_length=128, blank=False, null=False, unique=True, db_index=True)
     staying_onsite = models.BooleanField(default=False, null=False)
     staying_friday = models.BooleanField(default=False, null=False)
+    updated_date = models.DateTimeField(null=True)
+    created_date = models.DateTimeField(null=True, auto_now_add=True)
 
     def __unicode__(self):
         return u'%s (%s)' % (self.name, self.email)
@@ -28,4 +31,13 @@ class Rsvp(models.Model):
         if not self.rsvp_code:
             self.rsvp_code = generate_rsvp_code()
         self.rsvp_code_slug = slugify(self.rsvp_code)
+        self.updated_date = timezone.now()
         return super(Rsvp, self).save(*args, **kwargs)
+
+
+class SentEmail(models.Model):
+    to = models.EmailField(max_length=256, blank=False, null=False)
+    subject = models.CharField(max_length=256, blank=True, null=False)
+    body_html = models.TextField(blank=True, null=False)
+    body_text = models.TextField(blank=True, null=False)
+    sent_date = models.DateTimeField(null=True, auto_now_add=True)
