@@ -11,12 +11,12 @@ class Rsvp(models.Model):
     party_size = models.IntegerField(null=False, blank=False)
     attending = models.BooleanField(default=True, null=False)
     responded = models.BooleanField(default=False, null=False)
-    rsvp_code = models.CharField(max_length=128, blank=False, null=False, unique=True, db_index=True)
-    rsvp_code_slug = models.CharField(max_length=128, blank=False, null=False, unique=True, db_index=True)
+    rsvp_code = models.CharField(max_length=128, blank=True, null=True, unique=True, db_index=True)
+    rsvp_code_slug = models.CharField(max_length=128, blank=True, null=True, unique=True, db_index=True)
     staying_onsite = models.BooleanField(default=False, null=False)
     staying_friday = models.BooleanField(default=False, null=False)
-    updated_date = models.DateTimeField(null=True)
-    created_date = models.DateTimeField(null=True, auto_now_add=True)
+    updated_date = models.DateTimeField(null=True, blank=True)
+    created_date = models.DateTimeField(null=True, blank=True, auto_now_add=True)
 
     def __unicode__(self):
         return u'%s (%s)' % (self.name, self.email)
