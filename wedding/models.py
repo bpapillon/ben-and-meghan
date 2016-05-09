@@ -7,7 +7,7 @@ from .utils.rsvp_code import generate_rsvp_code
 
 class Rsvp(models.Model):
     name = models.CharField(max_length=128, blank=False, null=False)
-    email = models.EmailField(max_length=256, blank=False, null=False)
+    email = models.EmailField(max_length=256, blank=True, null=True)
     party_size = models.IntegerField(null=False, blank=False)
     attending = models.BooleanField(default=True, null=False)
     responded = models.BooleanField(default=False, null=False)
