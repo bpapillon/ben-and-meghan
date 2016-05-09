@@ -22,11 +22,6 @@ h3{
 	text-transform: uppercase;
 }
 
-p{
-	margin:0;
-	padding:0;
-}
-
 .btn-danger, .btn-danger:hover {
 	background-color: #2D571F;
     border-color: #2D571F;
@@ -136,15 +131,15 @@ a:hover,a:active,a:focus {
 	background: url('/static/img/hover-moon-new.png') no-repeat;
 }
 
-.navbar-default .navbar-nav>li>a:hover.anchorLinkRsvp {
+.navbar-default .navbar-nav>li>a:hover.anchorLinkWedding {
 	background: url('/static/img/hover-moon-crescent.png') no-repeat;
 }
 
-.navbar-default .navbar-nav>li>a:hover.anchorLinkPhotos {
+.navbar-default .navbar-nav>li>a:hover.anchorLinkRsvp {
 	background: url('/static/img/hover-moon-half.png') no-repeat;
 }
 
-.navbar-default .navbar-nav>li>a:hover.anchorLinkWedding {
+.navbar-default .navbar-nav>li>a:hover.anchorLinkPhotos {
 	background: url('/static/img/hover-moon-waning.png') no-repeat;
 }
 

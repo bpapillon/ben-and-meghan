@@ -35,9 +35,9 @@
 				<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="#home" class="anchorLink anchorLinkHome">Home</a></li>
+						<li><a href="#wedding" class="anchorLink anchorLinkWedding">Wedding</a></li>
 						<li><a href="#rsvp" class="anchorLink anchorLinkRsvp">RSVP</a></li>
 						<li><a href="#photos" class="anchorLink anchorLinkPhotos">Photos</a></li>
-						<li><a href="#wedding" class="anchorLink anchorLinkWedding">Wedding</a></li>
 						<li><a href="#registry" class="anchorLink anchorLinkRegistry">Registry</a></li>
 					</ul>
 				</nav>
@@ -58,7 +58,57 @@
 						</div>
 					</div>
 				</div>
+				<a name="wedding" id="wedding"></a>
+			</div>
+		</div>
+
+		<div class="wedding">
+			<div class="container">
+						<div class="title">
+							<h3>Wedding</h3>
+						</div>
+						<div class="bor"></div>
+						
+				<div class="row">
+					<div class="col-md-4 col-sm-4">
+						<div class="well">
+							<h3>The Event</h3>
+							<p>The wedding ceremony will take place at 5pm at the <a href="https://www.google.com/maps/place/Rock+Castle+Gorge+Rd,+Floyd,+VA+24091/@36.8000703,-80.3778297,17z/data=!3m1!4b1!4m2!3m1!1s0x885273e78afea5e1:0xc91742476100af46" target="_blank">Floydfest site</a>, followed by dinner and dancing. This is an adults-only event; please plan accordingly.
+							<hr />
+							<h3>The Location</h3>
+							<p><a href="https://www.google.com/maps/place/Rock+Castle+Gorge+Rd,+Floyd,+VA+24091/@36.8000703,-80.3778297,17z/data=!3m1!4b1!4m2!3m1!1s0x885273e78afea5e1:0xc91742476100af46">FloydFest</a>
+							   <br />894 Rock Castle Gorge Road
+							   <br />Floyd, VA 24091
+							</p>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4">
+						<div class="well">
+							<h3>The Weekend</h3>
+							<p>The <a href="https://www.google.com/maps/place/Rock+Castle+Gorge+Rd,+Floyd,+VA+24091/@36.8000703,-80.3778297,17z/data=!3m1!4b1!4m2!3m1!1s0x885273e78afea5e1:0xc91742476100af46" target="_blank">Floydfest site</a> will be open from Friday, August 19 to Sunday, August 21 to guests who are camping, and we encourage our guests to bring a tent or RV and make a weekend of it.</p>
+							<p>Dinner will be served on Friday night for those staying on-site. You're on your own for late night snacks and any other meals; we recommend Dino's in Willis and Dogtown Roadhouse in Floyd.</p>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4">
+						<div class="well">
+							<h3>Local Accomodations</h3>
+							<p>For those not staying on-site, the following accommodations are convenient to the venue.</p>
+							<p><a href="http://www.hotelfloyd.com/" target="_blank">Hotel Floyd</a>
+							   <br />300 Rick Lewis Way
+							   <br />Floyd, VA 24091
+							   <br /><a href="https://www.google.com/maps/place/Hotel+Floyd/@36.9106072,-80.3194256,17z/data=!3m1!4b1!4m2!3m1!1s0x884d882db913c609:0x11a364cf8e1ad452" target="_blank">Get Directions</a>
+							</p>
+							<p><a href="http://www.woodberryinn.com/" target="_blank">Woodbury Inn</a>
+							   <br />182 Woodberry Rd SW
+							   <br />Meadows of Dan, VA 24120
+							   <br /><a href="https://www.google.com/maps/place/Woodberry+Inn/@36.7739403,-80.4039997,17z/data=!3m1!4b1!4m2!3m1!1s0x88527251a1d8cf07:0xddce15feac4629e7" target="_blank">Get Directions</a>
+							</p>
+							
+						</div>
+					</div>
+				</div>
 				<a name="rsvp" id="rsvp"></a>
+				<hr>
 			</div>
 		</div>
 
@@ -100,7 +150,7 @@
 								</div>
 							    <div class="form-group">
 									<label class="control-form col-md-3" for="name">Party Size</label>
-									<div class="col-md-9" ng-bind="rsvp.party_size"></div>
+									<div class="col-md-9"><span ng-bind="rsvp.party_size"></span> (This is an adults-only event; please plan accordingly)</div>
 								</div>
 								<div class="form-group">
 									<label class="control-form col-md-3" for="email">Email</label>
@@ -174,63 +224,9 @@
 					</div>
 					
 				</div>
-				<a name="wedding" id="wedding"></a>
-				<hr>
-				
-			</div>
-		</div>
-
-		<div class="wedding">
-			<div class="container">
-						<div class="title">
-							<h3>Wedding</h3>
-						</div>
-						<div class="bor"></div>
-						
-				<div class="row">
-					<div class="col-md-4 col-sm-4">
-						<div class="well">
-							<h3><i class="icon-heart"></i> Ceremony &amp; Reception</h3>
-							<a href="#">FloydFest</a>
-							<p>894 Rock Castle Gorge Road
-							   <br />Floyd, VA 24091
-							</p>
-							<a href="https://www.google.com/maps/place/Rock+Castle+Gorge+Rd,+Floyd,+VA+24091/@36.8000703,-80.3778297,17z/data=!3m1!4b1!4m2!3m1!1s0x885273e78afea5e1:0xc91742476100af46" target="_blank">Get Direction</a>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-4">
-						<div class="well">
-							<h3><i class="icon-glass"></i> Schedule</h3>
-							<h5>Saturday, August 20<//h5>
-							<p><strong>5pm:</strong> ceremony at the workshop porch</p>
-							<p><strong>5:30pm:</strong> cocktail hour in the beer garden</p>
-							<p><strong>6:00pm:</strong> reception catered by Feast &amp; Company</p>
-							<p><strong>8:00pm:</strong> dance &amp; party &amp; other stuff</p>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-4">
-						<div class="well">
-							<h3><i class="icon-home"></i> Accomodations</h3>
-							<a href="http://www.floydfest.com">FloydFest</a>
-							<p>Camp for free on the FloydFest site, or bring an RV!
-							</p>
-							<hr />
-							<a href="http://www.hotelfloyd.com/" target="_blank">Hotel Floyd</a>
-							<p>300 Rick Lewis Way
-							   <br />Floyd, VA 24091
-							</p>
-							<p><a href="https://www.google.com/maps/place/Hotel+Floyd/@36.9106072,-80.3194256,17z/data=!3m1!4b1!4m2!3m1!1s0x884d882db913c609:0x11a364cf8e1ad452" target="_blank">Get Directions</a></p>
-							<hr />
-							<a href="http://www.woodberryinn.com/" target="_blank">Woodbury Inn</a>
-							<p>182 Woodberry Rd SW
-							   <br />Meadows of Dan, VA 24120
-							</p>
-							<a href="https://www.google.com/maps/place/Woodberry+Inn/@36.7739403,-80.4039997,17z/data=!3m1!4b1!4m2!3m1!1s0x88527251a1d8cf07:0xddce15feac4629e7" target="_blank">Get Directions</a>
-						</div>
-					</div>
-				</div>
 				<a name="registry" id="registry"></a>
 				<hr>
+				
 			</div>
 		</div>
 
