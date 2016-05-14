@@ -1,6 +1,6 @@
 from django.db import models
+from django.db.models import Q
 from django.utils import timezone
-from django.utils.text import slugify
 
 from .utils.rsvp_code import generate_rsvp_code
 
@@ -22,15 +22,14 @@ class Rsvp(models.Model):
         return u'%s (%s)' % (self.name, self.email)
 
     def generate_rsvp_code(self):
-        rsvp_code = generate_rsvp_code()
-        while self.__class__.objects.filter(rsvp_code=rsvp_code).count() > 0:
-            rsvp_code = generate_rsvp_code()
-        return rsvp_code
+        rsvp_code, rsvp_code_slug = generate_rsvp_code()
+        while self.__class__.objects.filter(Q(rsvp_code=rsvp_code)|Q(rsvp_code_slug=rsvp_code_slug)).count() > 0:
+            rsvp_code, rsvp_code_slug = generate_rsvp_code()
+        return rsvp_code, rsvp_code_slug
 
     def save(self, *args, **kwargs):
         if not self.rsvp_code:
-            self.rsvp_code = generate_rsvp_code()
-        self.rsvp_code_slug = slugify(self.rsvp_code)
+            self.rsvp_code, self.rsvp_code_slug = self.generate_rsvp_code()
         self.updated_date = timezone.now()
         return super(Rsvp, self).save(*args, **kwargs)
 

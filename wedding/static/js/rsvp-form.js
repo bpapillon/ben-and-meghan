@@ -31,8 +31,9 @@ controller('rsvpFormCtrl', ['$cookies', '$http', '$scope', function($cookies, $h
 	$scope.rsvp_code = '';
 
 	$scope.getRsvp = function() {
-		var rsvp_code = $scope.rsvp_code.toLowerCase().replace(/[\s\_]+/g, '-').replace(/[^a-z0-9\-]/g, '');
+		var rsvp_code = $scope.rsvp_code.toLowerCase().replace(/[^a-z0-9]/g, '');
 		if (!rsvp_code) {
+			$scope.setError('Whoops, Ben screwed up the web site somehow. Shoot him an email or call and we\'ll figure it out.');
 			return;
 		}
 		$scope.setError();
