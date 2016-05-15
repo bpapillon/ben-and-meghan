@@ -150,7 +150,9 @@
 								</div>
 							    <div class="form-group">
 									<label class="control-form col-md-3" for="name">Party Size</label>
-									<div class="col-md-9"><span ng-bind="rsvp.party_size"></span> (This is an adults-only event; please plan accordingly)</div>
+									<div class="col-md-9">
+									    <select name="singleSelect" ng-model="rsvp.confirmed_party_size" ng-if="rsvp.party_size > 1" ng-options="option as option for option in party_size_options"></select>
+									    <span ng-bind="rsvp.party_size" ng-if="rsvp.party_size < 2"></span> (This is an adults-only event; please plan accordingly)</div>
 								</div>
 								<div class="form-group">
 									<label class="control-form col-md-3" for="email">Email</label>

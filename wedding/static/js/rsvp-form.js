@@ -29,6 +29,7 @@ controller('rsvpFormCtrl', ['$cookies', '$http', '$scope', function($cookies, $h
 		'staying_friday': false,
 	};
 	$scope.rsvp_code = '';
+	$scope.party_size_options = [1];
 
 	$scope.getRsvp = function() {
 		var rsvp_code = $scope.rsvp_code.toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -43,6 +44,7 @@ controller('rsvpFormCtrl', ['$cookies', '$http', '$scope', function($cookies, $h
 			'url': '/rsvp/' + rsvp_code + '/'
 		}).then(function successCallback(response) {
 			$scope.rsvp = response.data;
+			$scope.updatePartySizeOptions($scope.rsvp.party_size);
 			$scope.form_state = 2;
 		}, function errorCallback(response) {
 			$scope.setError('Are you sure? We couldn\'t find that RSVP code...');
@@ -58,6 +60,9 @@ controller('rsvpFormCtrl', ['$cookies', '$http', '$scope', function($cookies, $h
 		$scope.setError();
 		$scope.form_state = 1;
 		$scope.rsvp.responded = true;
+		if ($scope.rsvp.attending && $scope.rsvp.party_size < 2) {
+			$scope.rsvp.confirmed_party_size = $scope.rsvp.party_size;
+		}
 		$http({
 			'method': 'PUT',
 			'url': '/rsvp/' + $scope.rsvp.rsvp_code_slug + '/',
@@ -80,6 +85,14 @@ controller('rsvpFormCtrl', ['$cookies', '$http', '$scope', function($cookies, $h
 		} else {
 			$scope.error_text = message;
 		}
+	};
+
+	$scope.updatePartySizeOptions = function(party_size) {
+		var options = [];
+		for (var i = 0; i < party_size; i++) {
+			options.push(i + 1);
+		}
+		$scope.party_size_options = options;
 	};
 
 }]);
