@@ -101,4 +101,4 @@ def generate_rsvp_code(num_nouns=1):
 
 
 def slugify_rsvp_code(rsvp_code):
-    return ''.join(filter(str.isalpha, rsvp_code.lower()))
+    return ''.join(filter(str.isalpha, str(rsvp_code.lower())))
