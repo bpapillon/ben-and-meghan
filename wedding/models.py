@@ -9,7 +9,7 @@ class Rsvp(models.Model):
     name = models.CharField(max_length=128, blank=False, null=False)
     email = models.EmailField(max_length=256, blank=True, null=True)
     party_size = models.IntegerField(null=False, blank=False, default=2)
-    confirmed_party_size = models.IntegerField(null=False, blank=False, default=2)
+    confirmed_party_size = models.IntegerField(null=True, blank=True)
     attending = models.BooleanField(default=True, null=False)
     responded = models.BooleanField(default=False, null=False)
     rsvp_code = models.CharField(max_length=128, blank=True, null=True, unique=True, db_index=True)
