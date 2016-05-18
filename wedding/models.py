@@ -19,6 +19,10 @@ class Rsvp(models.Model):
     updated_date = models.DateTimeField(null=True, blank=True)
     created_date = models.DateTimeField(null=True, blank=True, auto_now_add=True)
 
+    class Meta:
+        verbose_name = 'RSVP'
+        verbose_name_plural = 'RSVPs'
+
     def __unicode__(self):
         return u'%s (%s)' % (self.name, self.email)
 
