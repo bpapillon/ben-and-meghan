@@ -90,4 +90,4 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
 )
 
-GOOGLE_ANALYTICS_KEY = os.environ.get('DEBUG')
+GOOGLE_ANALYTICS_KEY = os.environ.get('GOOGLE_ANALYTICS_KEY')
