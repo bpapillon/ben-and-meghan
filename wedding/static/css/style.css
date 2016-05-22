@@ -8,7 +8,7 @@
     src: url('/static/fonts/fabiolo-smallcap-semibold/fabiolo-smallcap-semibold.woff');
 }
 
-body{
+body {
 	font-family: 'Fabiolo Regular', sans-serif;
 	font-size:13px;
 	line-height:20px;
@@ -20,6 +20,10 @@ body{
 
 h3{
 	text-transform: uppercase;
+}
+
+.main-invite h2 {
+	font-family: 'Fabiolo Regular', sans-serif;
 }
 
 .btn-danger, .btn-danger:hover {
