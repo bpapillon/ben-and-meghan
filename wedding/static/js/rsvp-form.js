@@ -27,6 +27,7 @@ controller('rsvpFormCtrl', ['$cookies', '$http', '$scope', function($cookies, $h
 		'party_size': 2,
 		'staying_onsite': true,
 		'staying_friday': false,
+		'comments': '',
 	};
 	$scope.rsvp_code = '';
 	$scope.party_size_options = [1];

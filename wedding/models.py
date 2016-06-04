@@ -18,6 +18,7 @@ class Rsvp(models.Model):
     staying_friday = models.BooleanField(default=False, null=False)
     updated_date = models.DateTimeField(null=True, blank=True)
     created_date = models.DateTimeField(null=True, blank=True, auto_now_add=True)
+    comments = models.TextField(blank=True)
 
     class Meta:
         verbose_name = 'RSVP'

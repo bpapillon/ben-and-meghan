@@ -14,7 +14,6 @@ class Command(BaseCommand):
         responded = rsvps.filter(responded=True)
         not_responded = rsvps.filter(responded=False)
         attending = responded.filter(attending=True)
-        not_attending = responded.filter(attending=False)
         onsite = attending.filter(staying_onsite=True)
         friday = attending.filter(staying_friday=True)
         print """
