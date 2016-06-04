@@ -18,17 +18,18 @@ class Command(BaseCommand):
         onsite = attending.filter(staying_onsite=True)
         friday = attending.filter(staying_friday=True)
         print """
-Responded: {responded_count} / {total_count}
-Attending: {attending_count} / {responded_count}
-Confirmed guests: {confirmed_guests}
-Confirmed guests on site: {confirmed_onsite}
-Unconfirmed guests: {unconfirmed_guests}
+Invitations responded: {invitations_responded} / {invitations_total}
+Invitations attending: {invitations_attending} / {invitations_responded}
+Confirmed guests: {guests_confirmed}
+Confirmed guests on site: {guests_onsite}
+Confirmed guests for Friday: {guests_friday}
+Unconfirmed guests: {guests_unconfirmed}
         """.format(
-            attending_count=attending.count(),
-            confirmed_friday=sum_attribute(friday, 'confirmed_party_size'),
-            confirmed_guests=sum_attribute(attending, 'confirmed_party_size'),
-            confirmed_onsite=sum_attribute(onsite, 'confirmed_party_size'),
-            responded_count=responded.count(),
-            total_count=rsvps.count(),
-            unconfirmed_guests=sum_attribute(not_responded, 'party_size')
+            guests_confirmed=sum_attribute(attending, 'confirmed_party_size'),
+            guests_friday=sum_attribute(friday, 'confirmed_party_size'),
+            guests_onsite=sum_attribute(onsite, 'confirmed_party_size'),
+            guests_unconfirmed=sum_attribute(not_responded, 'party_size'),
+            invitations_attending=attending.count(),
+            invitations_responded=responded.count(),
+            invitations_total=rsvps.count(),
         )
