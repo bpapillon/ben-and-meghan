@@ -60,7 +60,7 @@ controller('rsvpFormCtrl', ['$cookies', '$http', '$scope', function($cookies, $h
 	};
 
 	$scope.submitRsvp = function() {
-		if (!$scope.rsvp.email) {
+		if ($scope.rsvp.attending && !$scope.rsvp.email) {
 			$scope.setError('We\'re gonna need your email address...');
 			return;
 		}
