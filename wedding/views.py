@@ -29,8 +29,8 @@ def rsvp_view(request, rsvp_code=None):
         serializer = RsvpSerializer(rsvp, data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        try:
-            send_rsvp_confirmation_email(rsvp.id)
-        except:
-            pass
+        # try:
+        #     send_rsvp_confirmation_email(rsvp.id)
+        # except:
+        #     pass
         return Response(serializer.data)
