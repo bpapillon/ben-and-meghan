@@ -27,8 +27,10 @@ Confirmed guests on site: {guests_onsite}
 Confirmed guests for Friday: {guests_friday}
 Unconfirmed guests: {guests_unconfirmed}
 Max possible guests: {guests_max}
+Attendance rate: {attendance_rate}
 Estimated total guests: {guests_estimated}
         """.format(
+            attendance_rate=attendance_rate,
             guests_confirmed=guests_confirmed,
             guests_estimated=guests_confirmed + int(attendance_rate * guests_unconfirmed),
             guests_friday=sum_attribute(friday, 'confirmed_party_size'),
