@@ -9,7 +9,6 @@ from rest_framework.response import Response
 
 from .models import Rsvp
 from .serializers import RsvpSerializer
-from .utils.mail import send_rsvp_confirmation_email
 
 
 class HomeView(TemplateView):
@@ -35,8 +34,4 @@ def rsvp_view(request, rsvp_code=None):
         serializer = RsvpSerializer(rsvp, data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        # try:
-        #     send_rsvp_confirmation_email(rsvp.id)
-        # except:
-        #     pass
         return Response(serializer.data)
