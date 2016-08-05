@@ -1,3 +1,4 @@
+import datetime
 import os
 
 import dj_database_url
@@ -101,3 +102,7 @@ EMAIL_PORT = os.environ.get('EMAIL_PORT')
 GOOGLE_ANALYTICS_KEY = os.environ.get('GOOGLE_ANALYTICS_KEY')
 
 RSVP_EMAIL_RECIPIENTS = os.environ.get('EMAIL_PORT')
+
+DISPLAY_EMAIL = 'meghanandbenwedding@gmail.com'
+
+RSVP_CUTOFF_DATE = datetime.datetime(2016, 8, 1, 0, 0, 0)

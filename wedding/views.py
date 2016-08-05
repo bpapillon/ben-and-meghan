@@ -1,3 +1,5 @@
+import datetime
+
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from django.views.generic import TemplateView
@@ -15,7 +17,11 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
-        context['GOOGLE_ANALYTICS_KEY'] = settings.GOOGLE_ANALYTICS_KEY
+        context.update({
+            'DISPLAY_EMAIL': settings.DISPLAY_EMAIL,
+            'GOOGLE_ANALYTICS_KEY': settings.GOOGLE_ANALYTICS_KEY,
+            'rsvp_cutoff': datetime.datetime.now() > settings.RSVP_CUTOFF_DATE,
+        })
         return context
 
 
