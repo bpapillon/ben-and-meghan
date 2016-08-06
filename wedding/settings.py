@@ -91,7 +91,6 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
 )
 
-
 EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND')
 EMAIL_USE_TLS = True
 EMAIL_HOST = os.environ.get('EMAIL_HOST')
