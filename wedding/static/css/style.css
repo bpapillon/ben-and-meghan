@@ -27,8 +27,8 @@ h3{
 }
 
 .btn-danger, .btn-danger:hover {
-	background-color: #2D571F;
-    border-color: #2D571F;
+	background-color: #26a303;
+    border-color: #26a303;
 }
 
 a:hover,a:active,a:focus {
@@ -64,7 +64,7 @@ a:hover,a:active,a:focus {
 }
 
 .wedding .well a{
-	color: #2D571F;
+	color: #26a303;
 	text-decoration:none;
 }
 
@@ -96,7 +96,7 @@ a:hover,a:active,a:focus {
 }
 
 .navbar-default .navbar-toggle {
-	border-color: #2D571F;
+	border-color: #26a303;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
@@ -104,15 +104,15 @@ a:hover,a:active,a:focus {
 }
 
 .navbar-toggle{
-	background: #2D571F;
+	background: #26a303;
 }
 
 .navbar-toggle:hover{
-	background: #2D571F !important;
+	background: #26a303 !important;
 }
 
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
-	border-color: #2D571F;
+	border-color: #26a303;
 }
 
 .navbar-default .navbar-nav>li>a {
@@ -407,7 +407,7 @@ a:hover,a:active,a:focus {
 	bottom: 0px;
 	right: 0px;
 	z-index: 104400;
-	background: #2D571F;
+	background: #26a303;
 }
 
 .totop a, .totop a:visited, .totop a:hover{
