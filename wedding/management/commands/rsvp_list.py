@@ -1,4 +1,6 @@
+import csv
 import optparse
+import sys
 
 from django.core.management.base import BaseCommand, CommandError
 
@@ -38,6 +40,7 @@ class Command(BaseCommand):
         elif options['attending']:
             rsvps = rsvps.filter(responded=True, attending=True)
             fields.append('confirmed_party_size')
-        print ','.join(fields)
+        writer = csv.writer(sys.stdout)
+        writer.writerow(fields)
         for rsvp in rsvps:
-            print ','.join(map(str, [getattr(rsvp, field) for field in fields]))
+            print writer.writerow([getattr(rsvp, field) for field in fields])
